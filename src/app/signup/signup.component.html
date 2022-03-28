@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="signdiv">
+        <h1>hoopr</h1>
+        <p style="font-size: 24px; color: black; margin-top: 30px;"><strong>Sign up to start licensing.</strong></p>
+        <button class="fbbtn"><i class="fa fa-facebook fa-fw "></i> Sign up with Facebook</button>
+        <button class="googlebtn"><img src="/assets/images/google.svg" alt="" class="googlesvgsize fa-fw"> Sign up with Google</button>
+        <span class="ortext"><span>or</span></span>
+        <p style="color: black; margin-top: 20px; font-size: 18px;"><strong>Sign up with your email address</strong></p>
+        <form class="signformdiv">
+            <div>
+                <label for="email" class="labelclass">What's your email?</label>
+                <input
+                  type="text"
+                  id="email"
+                  class="form-control form-control-lg "
+                  placeholder="Enter your email.">
+            </div>
+            <div>
+                <label for="emailconfirm" class="labelclass">Confirm your email</label>
+                <input 
+                    type="text"
+                    id="emailconfirm"
+                    class="form-control form-control-lg signinput"
+                    placeholder="Enter your email again.">
+            </div>
+            <div>
+                <label for="password" class="labelclass">Create a password</label>
+                <input 
+                  type="password"
+                  id="password"
+                  class="form-control form-control-lg signinput"
+                  placeholder="Create a password.">
+            </div>
+            <div>
+                <label for="username" class="labelclass">What should we call you?</label>
+                <input 
+                  type="text"
+                  id="username"
+                  class="form-control form-control-lg signinput"
+                  placeholder="Enter a profile name">
+            </div>
+            <div>
+                <label for="dob" class="dobmainclass">What's your date of birth?</label>
+                <div class="dobclass">
+                    <label for="Month" class="doblabelclass">Month</label>
+                    <select name="cars" id="cars" class="form-control">
+                        <option value="none" selected disabled>Month</option>
+                        <option value="volvo">January</option>
+                        <option value="saab">February</option>
+                        <option value="opel">March</option>
+                        <option value="audi">April</option>
+                        <option value="audi">May</option>
+                        <option value="audi">June</option>
+                        <option value="audi">July</option>
+                        <option value="audi">August</option>
+                        <option value="audi">September</option>
+                        <option value="audi">October</option>
+                        <option value="audi">November</option>
+                        <option value="audi">December</option>
+                      </select>
+                      <label for="Day" class="doblabelclass">Day</label>
+                      <br>
+                      <input 
+                        type="text"
+                        id="day"
+                        class="form-control "
+                        placeholder="DD" maxlength  ="2">
+                        <label for="Year" class="doblabelclass">Year</label>
+                        <br>
+                        <input 
+                        type="text"
+                        id="year"
+                        class="form-control "
+                        placeholder="YYY" maxlength="4">
+            </div>
+                <label for="email" class="labelclass">What's your gender?</label>
+            <div>
+                <input type="radio" name="gender" id="male" class="form-check-input" >
+                <label class="form-check-label" for="male" style="margin-right: 20px;">
+                    Male
+                </label>
+                <input type="radio" name="gender" id="female" class="form-check-input">
+                <label class="form-check-label" for="female" style="margin-right: 20px;">
+                    Female
+                </label>
+                <input type="radio" name="gender" id="nb" class="form-check-input">
+                <label class="form-check-label" for="nb">
+                    Non-binary
+                </label>
+            </div>
+            <div class="form-check" style="margin-top: 20px;">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Share my registration data with Spotify's content providers for marketing purposes.
+                </label>
+            </div>
+            <p>By clicking on sign-up, you agree to Hoopr's <a href="#">Terms and Conditions of Use</a>.</p>
+            <p>To learn more about how Spotify collects, uses, shares and protects your personal data, please see <a href="#">Hoopr's Privacy Policy</a>.</p>
+              </div>
+        </form>
+        <button class="bgbutton" style="align-self: center;">Sign up</button>
+    </div>
+    <br><br><br><br>
+</body>
+</html>

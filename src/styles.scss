@@ -1,0 +1,304 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+nav{
+    height: 80px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px 0px 100px;
+}
+
+.logo{
+    height: 60px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 0 20px;
+}
+
+nav ul a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3 ease;
+}
+
+nav ul li a:hover{
+    color: #FF3567;
+}
+
+nav .menu-btn i{
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#navclick{
+    display: none;
+}
+
+.mainbgdiv{
+    background-color: #121212;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bgimg{
+    height: 100vh; 
+    width: 321.59px;
+}
+
+.bgtext{
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    justify-content: center;
+    color: white;
+}
+
+.bgbutton{
+    border-radius: 0px 20px 0px 20px;
+    background-color: transparent;
+    color: white;
+    padding: 10px 40px 9px 42px;
+    width: 200px;
+    align-self: center;
+    border-color: #FF3567;
+    background-image: linear-gradient(130deg, #FF7B7B 0%, #FF3567 100%);
+}
+
+.mainfootdiv{
+    background-color: #121212;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.foottextdiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    color: white    ;
+}
+
+.social{
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.footimg{
+    height: 55.3%; 
+    width: 100%; 
+    max-width: 575px; 
+    margin-top: 40px;
+}
+
+.signdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.fbbtn{
+    background-color: #384F81;
+    color: white;
+    padding: 10px;
+    border-radius: 35px;
+    width: 360px;
+    border-color: white;
+}
+
+.fbbtn:hover{
+    transform: scale(1.05);
+}
+
+.googlebtn{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 35px;
+    width: 360px;
+    border-color: black;
+    margin-top: 20px;
+}
+
+.googlebtn:hover{
+    transform: scale(1.05);
+}
+
+.googlesvgsize{
+    height: 24px;
+    width: 24px;
+}
+
+.hrtext{
+    width: 25%; 
+    text-align: center; 
+    border-bottom: 1px solid gray; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    color: gray;
+    margin-top: 30px;
+}
+
+.hrtextfull{
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid gray; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    color: gray;
+    margin-top: 30px;
+}
+
+.ortext {
+    width: 25%; 
+    text-align: center; 
+    border-bottom: 1px solid gray; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    color: gray;
+    margin-top: 30px;
+ } 
+ 
+ .ortext span { 
+     background:#fff; 
+     padding:0 10px; 
+ }
+
+ .signformdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+ .labelclass{
+     color: black;
+     font-weight: bold;
+     font-size: 14px;
+    //  margin-right: 320px;
+     margin-top: 20px;
+ }
+
+ .signinput{
+     height: 50px;
+     width: 370px;
+ }
+
+ .form-control-lg{
+     width: 70px;
+ }
+
+ .dobclass{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     margin: 10px;
+ }
+
+ .dobmainclass{
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+ }
+
+ .doblabelclass{
+     color: black;
+     font-weight: bold;
+     font-size: 14px;
+     margin-top: -22px;
+ }
+
+ .loginmaindiv{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-top: 20px;
+ }
+
+ .pal{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     margin-right: 30px;
+ }
+
+@media (max-width: 940px){
+
+    nav .menu-btn i{
+        display: block;
+    }
+
+    #navclick:checked ~ .menu-btn i:before{
+        content: '\f00d';
+    }
+
+    nav ul{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: black;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3 ease;
+    }
+
+    #navclick:checked ~ ul{
+        left: 0%;
+    }
+
+    nav ul li{
+        margin: 40px 0;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+        display: block;
+    }
+
+    nav ul li a:hover{
+        color: #FF3567;
+    }
+
+    .bgimg{
+        display: none;
+    }
+
+    .footimg{
+        display: none;
+    }
+}
