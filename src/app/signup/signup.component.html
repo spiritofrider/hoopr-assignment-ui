@@ -13,14 +13,16 @@
         <button class="googlebtn"><img src="/assets/images/google.svg" alt="" class="googlesvgsize fa-fw"> Sign up with Google</button>
         <span class="ortext"><span>or</span></span>
         <p style="color: black; margin-top: 20px; font-size: 18px;"><strong>Sign up with your email address</strong></p>
-        <form class="signformdiv">
+        <form class="signformdiv" [formGroup]="signupForm">
             <div>
                 <label for="email" class="labelclass">What's your email?</label>
                 <input
                   type="text"
                   id="email"
                   class="form-control form-control-lg "
-                  placeholder="Enter your email.">
+                  placeholder="Enter your email."
+                  formControlName="email">
+                  <span class="help-block errorclass" *ngIf="submitted && f.email.errors">Email is required</span>
             </div>
             <div>
                 <label for="emailconfirm" class="labelclass">Confirm your email</label>
@@ -28,7 +30,12 @@
                     type="text"
                     id="emailconfirm"
                     class="form-control form-control-lg signinput"
-                    placeholder="Enter your email again.">
+                    placeholder="Enter your email again."
+                    formControlName="emailconfirm">
+                    <div *ngIf="submitted && f.emailconfirm.errors">
+                        <span *ngIf="f.emailconfirm.errors.required" class="help-block errorclass">Email confirmation is required</span>
+                        <span *ngIf="f.emailconfirm.errors.mustMatch" class="help-block errorclass">Emails must match</span>
+                    </div>            
             </div>
             <div>
                 <label for="password" class="labelclass">Create a password</label>
@@ -36,7 +43,11 @@
                   type="password"
                   id="password"
                   class="form-control form-control-lg signinput"
-                  placeholder="Create a password.">
+                  placeholder="Create a password."
+                  formControlName="password">
+                  <div *ngIf="submitted && f.password.errors">
+                    <span *ngIf="f.password.errors.required" class="help-block errorclass">Password is required</span>
+                </div> 
             </div>
             <div>
                 <label for="username" class="labelclass">What should we call you?</label>
@@ -44,68 +55,64 @@
                   type="text"
                   id="username"
                   class="form-control form-control-lg signinput"
-                  placeholder="Enter a profile name">
+                  placeholder="Enter a profile name"
+                  formControlName="username">
+                  <div *ngIf="submitted && f.username.errors">
+                    <span *ngIf="f.username.errors.required" class="help-block errorclass">Username is required</span>
+                </div> 
             </div>
             <div>
                 <label for="dob" class="dobmainclass">What's your date of birth?</label>
                 <div class="dobclass">
                     <label for="Month" class="doblabelclass">Month</label>
-                    <select name="cars" id="cars" class="form-control">
+                    <select name="cars" id="cars" class="form-control" formControlName="month">
                         <option value="none" selected disabled>Month</option>
-                        <option value="volvo">January</option>
-                        <option value="saab">February</option>
-                        <option value="opel">March</option>
-                        <option value="audi">April</option>
-                        <option value="audi">May</option>
-                        <option value="audi">June</option>
-                        <option value="audi">July</option>
-                        <option value="audi">August</option>
-                        <option value="audi">September</option>
-                        <option value="audi">October</option>
-                        <option value="audi">November</option>
-                        <option value="audi">December</option>
-                      </select>
+                        <option *ngFor="let month of months" [value]="month">{{month}}</option> 
+                    </select>
+                    <div *ngIf="submitted && f.month.errors">
+                        <span *ngIf="f.month.errors.required" class="help-block errorclass">Month is required</span>
+                    </div>
                       <label for="Day" class="doblabelclass">Day</label>
                       <br>
                       <input 
                         type="text"
                         id="day"
                         class="form-control "
-                        placeholder="DD" maxlength  ="2">
+                        placeholder="DD" maxlength  ="2" formControlName="day">
+                        <div *ngIf="submitted && f.day.errors">
+                            <span *ngIf="f.day.errors.required" class="help-block errorclass">Day is required</span>
+                        </div>
                         <label for="Year" class="doblabelclass">Year</label>
                         <br>
                         <input 
                         type="text"
                         id="year"
                         class="form-control "
-                        placeholder="YYY" maxlength="4">
+                        placeholder="YYY" maxlength="4" formControlName="year">
+                        <div *ngIf="submitted && f.year.errors">
+                            <span *ngIf="f.year.errors.required" class="help-block errorclass">Year is required</span>
+                        </div>
             </div>
                 <label for="email" class="labelclass">What's your gender?</label>
-            <div>
-                <input type="radio" name="gender" id="male" class="form-check-input" >
-                <label class="form-check-label" for="male" style="margin-right: 20px;">
-                    Male
-                </label>
-                <input type="radio" name="gender" id="female" class="form-check-input">
-                <label class="form-check-label" for="female" style="margin-right: 20px;">
-                    Female
-                </label>
-                <input type="radio" name="gender" id="nb" class="form-check-input">
-                <label class="form-check-label" for="nb">
-                    Non-binary
-                </label>
-            </div>
+                <div *ngFor="let gender of genders; let i = index">
+                    <label>
+                        <input type="radio" formControlName="gender" [value]="gender">{{gender}}
+                    </label>
+                </div>
+                <div *ngIf="submitted && f.gender.errors">
+                    <span *ngIf="f.gender.errors.required" class="help-block errorclass">Gender is required</span>
+                </div>
             <div class="form-check" style="margin-top: 20px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Share my registration data with Spotify's content providers for marketing purposes.
+                <input class="form-check-input" type="checkbox" value="" id="Privacy" formControlName="privacy">
+                <label class="form-check-label" for="privacy">
+                    Share my registration data with Hoopr's content providers for marketing purposes.
                 </label>
             </div>
             <p>By clicking on sign-up, you agree to Hoopr's <a href="#">Terms and Conditions of Use</a>.</p>
-            <p>To learn more about how Spotify collects, uses, shares and protects your personal data, please see <a href="#">Hoopr's Privacy Policy</a>.</p>
+            <p>To learn more about how Hoopr collects, uses, shares and protects your personal data, please see <a href="#">Hoopr's Privacy Policy</a>.</p>
               </div>
         </form>
-        <button class="bgbutton" style="align-self: center;">Sign up</button>
+        <button class="bgbutton" style="align-self: center;"(click)="onSubmit()">Sign up</button>
     </div>
     <br><br><br><br>
 </body>
